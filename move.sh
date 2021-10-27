@@ -1,0 +1,1 @@
+mv dist/bf ~/PersonalPath
