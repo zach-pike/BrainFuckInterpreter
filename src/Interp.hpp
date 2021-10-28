@@ -108,13 +108,16 @@ class BFInterp {
                 case '[': {
                     // If value is zero them jump to end of loop
                     if (tape[tapePos] == 0) {
+                        // Try and find the closing bracket
                         size_t jmpTo;
                         size_t openingLoops = 0;
 
                         for (int j=i; j < code.size(); j++) {
+                            // Count the opening and closing brackets so find the matching pair
                             if (code[j] == '[') openingLoops++;
                             if (code[j] == ']') openingLoops--;
 
+                            // If we find a closing bracket and we have matched the closing brackets the we know we are good
                             if (code[j] == ']' && openingLoops == 0) {
                                 jmpTo = j;
 
@@ -122,6 +125,7 @@ class BFInterp {
                             }
                         }
 
+                        // Jump
                         i = jmpTo;
                     }
                 } break;
@@ -136,21 +140,24 @@ class BFInterp {
                         size_t closingLoops = 0;
 
                         for (int j=i; j >= 0; j--) {
+                            // Find matching bracket pairs
                             if (code[j] == ']') closingLoops++;
                             if (code[j] == '[') closingLoops--;
 
+                            // if we find a opening brack and we have matched bracket pairs then we know we found the index of the opening 
                             if (code[j] == '[' && closingLoops == 0) {
                                 jmpTo = j;
-
                                 break;
                             }
                         }
 
+                        // Jump
                         i = jmpTo;
                     }
                 } break;
 
                 default: {
+                    // BF language extension
                     if (unFuck) {
                         HandleExtended(command, i, code);
                     }
