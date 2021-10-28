@@ -24,4 +24,4 @@ The `--unfuck` flag tells the interpreter to parse my special commands i added f
 
 `#`: Read a interger from `stdin` ans store it at the memory pointer
 
-`?`: Debugging, prints out info about the mempry pointer address and the interger value stored there
+`?`: Debugging, prints out info about the memory pointer address and the interger value stored there
