@@ -15,13 +15,13 @@ class BFInterp {
     private:
         //Tape array
         std::array<Byte, TAPE_SIZE> tape;
+        
         //Current tape position
         size_t tapePos = 0;
         
+        // flags for interpreter
         bool replOn;
         bool unFuck;
-
-        std::vector<size_t> loopStarts;
     public:
         std::vector<char> getRecognizedSymbols() {
             if (unFuck)
