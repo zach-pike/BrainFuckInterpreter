@@ -1,5 +1,5 @@
 # My brainfuck interpreter
-This is a suped up brainfuck interpreter I made in school it contains a dew extrea features some people my find useful
+This is a suped up brainfuck interpreter I made in school. It contains a few extra features some people may find useful
 
 # Use
 First make a `dist` folder
